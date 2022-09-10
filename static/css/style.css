@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+
+body {
+  background-color: #e6e6e6;
+  color: #262626;
+}
+
+.interface {
+  width: 90%;
+  padding: 0;
+  max-width: 1160px;
+  margin: auto;
+  background-color: aliceblue;
+  box-sizing: border-box;
+  overflow-y: auto;
+  /* border: 1px solid blue; */
+
+  display: grid;
+  gap: 10px;
+  /* Quantas colunas: 3 colunas */
+  grid-template-columns: repeat(12, 1fr);
+  /* Quantas linhas: */
+  grid-template-rows: 1fr 2fr 3fr 3fr 1fr;
+  grid-template-areas:
+    "nav nav nav nav nav nav nav nav nav nav nav nav"
+    "header header header header header header header header header header header header"
+    "secao1 secao1 secao1 secao2 secao2 secao2 conteudo conteudo conteudo conteudo conteudo conteudo"
+    "sec-larga sec-larga sec-larga sec-larga sec-larga sec-larga conteudo conteudo conteudo conteudo conteudo conteudo"
+    "sec-larga sec-larga sec-larga sec-larga sec-larga sec-larga conteudo conteudo conteudo conteudo conteudo conteudo"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  width: 60%;
+  text-align: center;
+}
+
+/* .navbar .logo::after {
+    content: "\f412";
+    font-family: "Font Awesome 6 Brands";
+    display: inline-block;
+} */
+
+/* display flex só para os links do menu */
+nav ul {
+  width: 55%;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul li {
+  width: 120px;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+nav ul li:hover {
+  background-color: #107c10;
+  border-radius: 0.15rem;
+  color: #fff;
+  box-shadow: 0 0px 20px #a4f92e94;
+}
+
+img {
+  width: 100%;
+}
+
+div {
+  font-size: 1rem;
+  padding: 1rem;
+  /* border: 1px solid red; */
+  overflow-y: auto;
+}
+
+p,
+h3 {
+  padding: 10px;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.order0 {
+  grid-area: nav;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.order1 {
+  grid-area: header;
+  background-image: url("./../img/order2.jpg");
+  background-size: cover;
+  background-position: 0% -1px;
+  background-repeat: no-repeat;
+  background-color: #107c10;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.order2 {
+  grid-area: secao1;
+  padding: 0;
+  background-color: #107c10;
+  color: #fff;
+  /* background-color: blueviolet; */
+  /* width: 50%; */
+}
+
+.order3 {
+  grid-area: secao2;
+  /* width: 50%; */
+  padding: 0;
+  color: #fff;
+  background-color: black;
+  background-size: cover;
+}
+
+.order4 {
+  grid-area: conteudo;
+  padding: 0;
+  /* background-color: coral; */
+}
+
+.banner-economic {
+  display: flex;
+  padding: 0;
+  background-color: #107c10;
+  color: #fff;
+  /* align-items: center; */
+}
+
+.banner-economic .banner-economic-text {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.banner-economic-text span {
+  display: inline-block;
+  font-weight: 100;
+  color: #505050;
+  width: 63px;
+  padding: 3px;
+  font-size: 0.79rem;
+  background-color: #ffd800;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.banner-economic-text p {
+  font-size: 0.9rem;
+}
+
+.banner-economic h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-economic-div-img {
+  padding: 0;
+  overflow: hidden;
+}
+
+.banner-economic-div-img img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.order5 {
+  grid-area: sec-larga;
+  background-color: #d9d9d9;
+}
+
+.order6 {
+  grid-area: footer;
+  background-color: #505050;
+  color: #e6e6e6;
+  /* height: 15vh; */
+}
+
+.order6 p,
+.order6-icons {
+  text-align: center;
+  padding: .2rem;
+}
+
+.order6 p {
+    font-size: .90rem;
+}
+
+.order6 i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* 
+.fa-square-facebook {
+    color: #2A6593;
+
+}
+
+.fa-square-whatsapp {
+    color: #2EA21C;
+}
+
+.fa-square-instagram {
+    color: #DD068B;
+} */
+
+@media (max-width: 950px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .interface {
+    width: 100%;
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 1fr 1.5fr 1.5fr 2fr 1fr;
+    grid-template-areas:
+      "nav nav nav nav nav nav nav nav"
+      "header header header header header header header header"
+      "secao1 secao1 secao1 conteudo conteudo conteudo conteudo conteudo"
+      "secao2 secao2  secao2 conteudo conteudo conteudo conteudo conteudo"
+      "sec-larga sec-larga sec-larga sec-larga sec-larga sec-larga sec-larga sec-larga "
+      "footer footer footer footer footer footer footer footer";
+  }
+
+  .order1 {
+    background-position: 4% 0;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 680px) {
+  .interface {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 2fr 3fr 2fr 1fr;
+    grid-template-areas:
+      "nav nav nav nav"
+      "header header header header"
+      "secao1 secao1 secao2 secao2"
+      "conteudo conteudo conteudo conteudo"
+      "sec-larga sec-larga sec-larga sec-larga"
+      "footer footer footer footer";
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar .logo {
+    color: #fff;
+  }
+
+  nav ul li {
+    padding: 0.3rem;
+    font-size: 0.95rem;
+    transition: 0.3s;
+  }
+
+  nav ul li:hover {
+    box-shadow: 0 0px 7px #107c10;
+  }
+
+  .interface {
+    height: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.5fr 0.9fr 0.9fr 1fr 2fr 1fr;
+    gap: 2px;
+
+    grid-template-areas:
+      "nav nav nav nav"
+      "header header header header"
+      "secao1 secao1 secao1 secao1"
+      "secao2 secao2 secao2 secao2"
+      "conteudo conteudo conteudo conteudo"
+      "sec-larga sec-larga sec-larga sec-larga"
+      "footer footer footer footer";
+  }
+
+  .order0 {
+    background-color: #000000;
+    color: #2dd02d;
+  }
+
+  .order1 {
+    background-position: 25%;
+  }
+
+}
